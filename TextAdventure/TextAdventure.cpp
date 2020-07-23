@@ -2,10 +2,24 @@
 //
 
 #include <iostream>
+#include "Map.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
+
+    int xL = 4, yL = 4;
+
+    Map map(xL, yL);
+
+    std::vector<Tile> objects;
+    Tile player('@', 1, 1);
+    objects.push_back(player);
+
+    map.PrintSize();
+
+    map.PrintBaseMap();
+    map.PrintMap(objects);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
