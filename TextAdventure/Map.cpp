@@ -18,6 +18,7 @@ void Map::PrintSize() {
 }
 
 void Map::PrintBaseMap() {
+	std::cout << std::endl;
 	for (auto rowItr = tiles.begin(); rowItr != tiles.end(); ++rowItr) {
 		for (auto tileItr = rowItr->begin(); tileItr != rowItr->end(); ++tileItr) {
 			std::cout << tileItr->GetText();
