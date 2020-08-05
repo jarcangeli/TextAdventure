@@ -1,0 +1,4 @@
+index, name, short, long
+0, torch, an unlit torch, a wooden shaft with an oil soaked rag wrapped around the top
+1, litTorch, a lit torch, a bright flame eminates from the top of a wooden shaft
+2, key, a bronze key, the top of this small bronze key is  shaped like a lion's head

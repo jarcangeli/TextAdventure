@@ -1,18 +1,18 @@
 #include "InputParser.h"
 
-CommandResult* const InputParser::result = new CommandResult(false, "null command");
-
 CommandResult InputParser::parse(std::string input) {
+	CommandResult result(false, "null command");
+
 	auto cmdItr = commands.find(input);
 	if (cmdItr != commands.end()) {
 		auto command = cmdItr->second;
-		*result = command(); 
+		result = command(); 
 	}
 	else {
 		auto missing = commands.find("missing")->second;
-		*result = missing();
+		result = missing();
 	}
-	return *result;
+	return result;
 }
 
 CommandResult test() {
