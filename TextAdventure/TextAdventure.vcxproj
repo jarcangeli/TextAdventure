@@ -148,18 +148,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CommandResult.cpp" />
+    <ClCompile Include="CSVReader.cpp" />
     <ClCompile Include="InputParser.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="TextAdventure.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommandResult.h" />
+    <ClInclude Include="CSVReader.h" />
     <ClInclude Include="InputParser.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Vector2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

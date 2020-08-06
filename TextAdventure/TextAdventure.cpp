@@ -5,6 +5,8 @@
 #include "Map.h"
 #include <map>
 #include "InputParser.h"
+#include "CSVReader.h"
+#include "Object.h"
 
 bool test() {
     std::cout << "Test success!" << std::endl;
@@ -23,11 +25,24 @@ int main()
     map.PrintSize();
 
     // set up player and map objects
-    std::vector<Tile> objects;
+    std::vector<Tile> tileObjects;
     Tile player('@', 1, 1);
-    objects.push_back(player);
+    tileObjects.push_back(player);
 
-    map.PrintMap(objects);
+    map.PrintMap(tileObjects);
+
+    CSVReader itemList("test.csv");
+    std::cout << "Items from file are:" << std::endl;
+    std::string header = itemList.nextLine();
+    std::string row = itemList.nextLine();
+    std::vector<Object> items;
+    while (row != "") {
+        Object item(row);
+        items.push_back(item);
+        std::cout << item.print() << std::endl;
+
+        row = itemList.nextLine();
+    }
 
     // read player inputs
     std::string input;
@@ -37,7 +52,7 @@ int main()
         CommandResult result = InputParser::parse(input);
         std::cout << result.message << std::endl;
 
-        map.PrintMap(objects);
+        map.PrintMap(tileObjects);
     }
 }
 
