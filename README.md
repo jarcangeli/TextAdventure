@@ -1,5 +1,5 @@
 # TextAdventure
-A text adventure demo made in C++.
+A text adventure demo currently being made in C++.
 
 Core implementations:
  - Parsing typed player inputs and mapping to game functions.
